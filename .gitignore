@@ -5,3 +5,5 @@
 .vscode/
 Sprites/XCF/
 *.exe
+*.pck
+Build/
