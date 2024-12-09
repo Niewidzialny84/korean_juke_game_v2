@@ -1,0 +1,23 @@
+[gd_scene load_steps=5 format=3 uid="uid://c7x8h4y6olkc5"]
+
+[ext_resource type="Script" path="res://Scripts/finish.gd" id="1_uvpi2"]
+[ext_resource type="Texture2D" uid="uid://dhldpy1cc4pya" path="res://Sprites/large_blocks.png" id="2_hinu5"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_wp0q0"]
+size = Vector2(64, 31)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_myoyy"]
+atlas = ExtResource("2_hinu5")
+region = Rect2(0, 32, 64, 32)
+
+[node name="Finish" type="Area2D"]
+script = ExtResource("1_uvpi2")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(1, 0.5)
+shape = SubResource("RectangleShape2D_wp0q0")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = SubResource("AtlasTexture_myoyy")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

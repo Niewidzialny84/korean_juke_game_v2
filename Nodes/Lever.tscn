@@ -1,0 +1,48 @@
+[gd_scene load_steps=7 format=3 uid="uid://cnxfydn53olav"]
+
+[ext_resource type="Texture2D" uid="uid://dhxfgwhmfjqsm" path="res://Sprites/blocks.png" id="1_41le7"]
+[ext_resource type="Script" path="res://Scripts/lever.gd" id="1_p45kh"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_smr02"]
+size = Vector2(33, 31)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8swi2"]
+atlas = ExtResource("1_41le7")
+region = Rect2(0, 32, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_g1ply"]
+atlas = ExtResource("1_41le7")
+region = Rect2(32, 32, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_41to1"]
+resource_name = "RedLever"
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8swi2")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_g1ply")
+}],
+"loop": false,
+"name": &"default",
+"speed": 5.0
+}]
+
+[node name="Lever" type="Area2D"]
+script = ExtResource("1_p45kh")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_smr02")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(-1, 0)
+scale = Vector2(1.03125, 1)
+sprite_frames = SubResource("SpriteFrames_41to1")
+
+[node name="Timer" type="Timer" parent="."]
+one_shot = true
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="body_exited" from="." to="." method="_on_body_exited"]
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

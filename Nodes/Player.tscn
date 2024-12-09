@@ -1,0 +1,88 @@
+[gd_scene load_steps=12 format=3 uid="uid://dp5pwxmbmnywd"]
+
+[ext_resource type="Script" path="res://Scripts/player.gd" id="1_eu1st"]
+[ext_resource type="Texture2D" uid="uid://citpbysr7ge3m" path="res://Sprites/player_Juke_Ball.png" id="2_1h5hr"]
+[ext_resource type="Texture2D" uid="uid://md1tiwb6popk" path="res://Sprites/player_Juke.png" id="3_02so2"]
+[ext_resource type="PackedScene" uid="uid://clx3udt128m3" path="res://Scenes/pause_menu.tscn" id="4_diyxp"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_mpkjw"]
+size = Vector2(51, 29.25)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ngs8w"]
+atlas = ExtResource("3_02so2")
+region = Rect2(64, 0, 64, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ru65l"]
+atlas = ExtResource("3_02so2")
+region = Rect2(0, 0, 64, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qhv1g"]
+atlas = ExtResource("2_1h5hr")
+region = Rect2(0, 0, 64, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_cw5xq"]
+atlas = ExtResource("2_1h5hr")
+region = Rect2(64, 0, 64, 48)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_xjfvr"]
+resource_name = "player_animation"
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ngs8w")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ru65l")
+}],
+"loop": false,
+"name": &"player_walk",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_qhv1g")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_cw5xq")
+}],
+"loop": false,
+"name": &"player_walk_ball",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ofe3u"]
+size = Vector2(52, 30.875)
+
+[node name="Player" type="CharacterBody2D"]
+texture_filter = 1
+script = ExtResource("1_eu1st")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(1, 9)
+shape = SubResource("RectangleShape2D_mpkjw")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_xjfvr")
+animation = &"player_walk"
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(34, 17)
+zoom = Vector2(3, 3)
+
+[node name="PauseMenu" parent="Camera2D" instance=ExtResource("4_diyxp")]
+visible = false
+offset_left = -270.0
+offset_top = -145.0
+offset_right = -270.0
+offset_bottom = -145.0
+scale = Vector2(0.5, 0.5)
+
+[node name="Area2D" type="Area2D" parent="."]
+collision_layer = 0
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(1, 9)
+shape = SubResource("RectangleShape2D_ofe3u")
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]

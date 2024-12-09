@@ -1,0 +1,50 @@
+[gd_scene load_steps=4 format=3 uid="uid://clx3udt128m3"]
+
+[ext_resource type="Script" path="res://Scripts/pause_menu.gd" id="1_blw7p"]
+[ext_resource type="Shader" path="res://Shaders/blur.gdshader" id="1_qn4ib"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_1yqv4"]
+shader = ExtResource("1_qn4ib")
+shader_parameter/amount = 3.0
+
+[node name="PauseMenu" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+script = ExtResource("1_blw7p")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+material = SubResource("ShaderMaterial_1yqv4")
+layout_mode = 0
+offset_left = -195.0
+offset_top = -171.0
+offset_right = 1263.0
+offset_bottom = 696.0
+
+[node name="MenuButtons" type="VBoxContainer" parent="."]
+layout_mode = 2
+offset_left = 362.0
+offset_top = 240.0
+offset_right = 700.0
+offset_bottom = 343.0
+
+[node name="Resume" type="Button" parent="MenuButtons"]
+layout_mode = 2
+text = "Resume"
+
+[node name="Restart" type="Button" parent="MenuButtons"]
+layout_mode = 2
+text = "Restart"
+
+[node name="Menu" type="Button" parent="MenuButtons"]
+layout_mode = 2
+text = "Exit to menu
+"
+
+[node name="Exit" type="Button" parent="MenuButtons"]
+layout_mode = 2
+text = "Quit to desktop"
+
+[connection signal="pressed" from="MenuButtons/Resume" to="." method="_resume"]
+[connection signal="pressed" from="MenuButtons/Restart" to="." method="_restart"]
+[connection signal="pressed" from="MenuButtons/Menu" to="." method="_return_to_menu"]
+[connection signal="pressed" from="MenuButtons/Exit" to="." method="_exit_game"]
