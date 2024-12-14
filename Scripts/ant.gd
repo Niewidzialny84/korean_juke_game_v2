@@ -1,5 +1,7 @@
 extends CharacterBody2D
 
+class_name EnemyAnt
+
 const SPEED = 50.0
 
 func _physics_process(_delta: float) -> void:

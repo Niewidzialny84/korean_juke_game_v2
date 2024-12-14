@@ -13,7 +13,11 @@ position = Vector2(22, 9)
 [node name="PointLight2D" type="PointLight2D" parent="."]
 position = Vector2(-22, -9)
 color = Color(0.671402, 0.664734, 7.70092e-07, 1)
+range_z_min = -2048
+range_z_max = 2048
 shadow_enabled = true
+shadow_filter = 2
+shadow_filter_smooth = 1.0
 texture = ExtResource("1_3njd6")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]

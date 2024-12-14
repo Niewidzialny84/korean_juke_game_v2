@@ -66,8 +66,9 @@ sprite_frames = SubResource("SpriteFrames_xjfvr")
 animation = &"player_walk"
 
 [node name="Camera2D" type="Camera2D" parent="."]
-position = Vector2(34, 17)
 zoom = Vector2(3, 3)
+drag_horizontal_enabled = true
+drag_vertical_enabled = true
 
 [node name="PauseMenu" parent="Camera2D" instance=ExtResource("4_diyxp")]
 visible = false
