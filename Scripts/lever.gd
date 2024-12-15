@@ -22,6 +22,7 @@ func activate() -> void:
 	usable = false
 	$AnimatedSprite2D.set_frame(!active)
 	$Timer.start()
+	$AudioStreamPlayer.play()
 	
 	controled_blocks.visible = active
 	controled_blocks.collision_enabled = active

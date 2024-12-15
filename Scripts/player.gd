@@ -8,9 +8,7 @@ const SPEED = 300
 const JUMP_POWER = -375
 var starting_position = Vector2.ZERO
 
-@onready var pause_menu = $Camera2D/PauseMenu
-var paused = false
-
+@export var ball : Ball
 var has_ball = false
 var original_camera_zoom = Vector2.ZERO
 var camera_zoom_treshold = Vector2(0.5, 0.5)
@@ -18,12 +16,11 @@ var camera_zoom_treshold = Vector2(0.5, 0.5)
 func _ready() -> void:
 	original_camera_zoom = $Camera2D.zoom
 	
+	ball.picked_up_ball.connect(_on_ball_picked_up_ball)
+	ball.dropped_ball.connect(_on_ball_dropped_ball)
 	
 func handle_input() -> void:
 	velocity.x = 0
-	
-	if Input.is_action_just_pressed("pause"):
-		pauseMenu()
 		
 	if Input.is_action_pressed("zoom"):
 		if $Camera2D.zoom >= camera_zoom_treshold:
@@ -44,6 +41,7 @@ func handle_input() -> void:
 		
 	if Input.is_action_just_pressed("move_up") and is_on_floor() and !has_ball:
 		velocity.y = JUMP_POWER
+		$JumpSound.play()
 		
 	if velocity.x != 0:
 		$AnimatedSprite2D.play()
@@ -54,6 +52,9 @@ func handle_input() -> void:
 		velocity.x /= 1.5
 	
 func _physics_process(_delta: float) -> void:
+	if $DeathAnimation.is_playing():
+		return
+	
 	velocity.y += get_gravity().y * _delta
 	
 	handle_input()
@@ -61,7 +62,26 @@ func _physics_process(_delta: float) -> void:
 
 func check_enemy_collision(body: Node2D) -> void:
 	if body is EnemyAnt:
-		restart_position()
+		deathFromEnemy()
+
+func deathFromEnemy() -> void:
+	if !$AnimatedSprite2D.visible:
+		return
+	
+	$AnimatedSprite2D.hide()
+	
+	await get_tree().create_timer(0.2).timeout
+	
+	$DeathAnimation.show()
+	$DeathAnimation.play()
+	$DeathSound.play()
+	
+	await $DeathAnimation.animation_finished
+	
+	$DeathAnimation.hide()
+	$AnimatedSprite2D.show()
+	
+	restart_position()
 
 func restart_position() -> void:
 	position = starting_position
@@ -70,25 +90,11 @@ func restart_position() -> void:
 
 func _on_area_2d_body_entered(body: Node2D) -> void:
 	check_enemy_collision(body)
-
-func pauseMenu() -> void:
-	if paused:
-		pause_menu.hide()
-		Engine.time_scale = 1
-	else:
-		pause_menu.show()
-		Engine.time_scale = 0
-		
-	paused = !paused
-
-func handle_camera() -> void:
-	pass
-	
-func getAnimatedSprite2D() -> AnimatedSprite2D:
-	return $AnimatedSprite2D
 	
 func _on_ball_dropped_ball() -> void:
+	$AnimatedSprite2D.animation = "player_walk"
 	has_ball = false
 
 func _on_ball_picked_up_ball() -> void:
+	$AnimatedSprite2D.animation = "player_walk_ball"
 	has_ball = true

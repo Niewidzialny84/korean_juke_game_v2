@@ -1,7 +1,7 @@
 extends Node
 
 func _change_to_game_scene() -> void:
-	get_tree().change_scene_to_file("res://Scenes/game_screen.tscn")
+	get_tree().change_scene_to_file("res://Scenes/Levels/Level1.tscn")
 
 func _exit_game() -> void:
 	get_tree().quit()

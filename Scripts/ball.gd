@@ -1,5 +1,7 @@
 extends Area2D
 
+class_name Ball
+
 @export var control_player : Player
 
 signal picked_up_ball 
@@ -25,20 +27,17 @@ func activate() -> void:
 	else:
 		pick_up_ball()
 	
+	$PickupSound.play()
 	active = !active
 	usable = false
 	$Timer.start()
 	
 
 func pick_up_ball() -> void:
-	control_player.getAnimatedSprite2D().animation = "player_walk_ball"
-	
 	visible = false
 	picked_up_ball.emit()
 
 func drop_ball() -> void:
-	control_player.getAnimatedSprite2D().animation = "player_walk"
-	
 	visible = true
 	position = control_player.position - Vector2(0, -8)
 	dropped_ball.emit()
@@ -46,7 +45,6 @@ func drop_ball() -> void:
 func _on_body_entered(body: Node2D) -> void:
 	if body.name == control_player.name:
 		in_area = true
-
 
 func _on_body_exited(body: Node2D) -> void:
 	if body.name == control_player.name:

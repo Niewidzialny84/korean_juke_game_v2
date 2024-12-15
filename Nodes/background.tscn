@@ -1,0 +1,83 @@
+[gd_scene load_steps=6 format=3 uid="uid://dmuprg6squojm"]
+
+[ext_resource type="Texture2D" uid="uid://lbxmgnvnmwnd" path="res://Sprites/background-sky.png" id="1_bqqcr"]
+[ext_resource type="Texture2D" uid="uid://dydqxudjnpbvr" path="res://Sprites/background-mountain-large.png" id="2_2bifk"]
+[ext_resource type="Texture2D" uid="uid://dbmxhqxct3tn1" path="res://Sprites/background-mountain-small.png" id="3_7hmho"]
+[ext_resource type="Texture2D" uid="uid://qrjpo7x4sim8" path="res://Sprites/background-tree.png" id="4_0727b"]
+[ext_resource type="Texture2D" uid="uid://b7riy2ndi481h" path="res://Sprites/background-cloud.png" id="5_ex1hg"]
+
+[node name="Background" type="Node2D"]
+
+[node name="Sky" type="Parallax2D" parent="."]
+scroll_scale = Vector2(0.25, 0.25)
+repeat_size = Vector2(720, 480)
+repeat_times = 10
+
+[node name="Sprite2D" type="Sprite2D" parent="Sky"]
+position = Vector2(700, 0)
+scale = Vector2(1.042, 1)
+texture = ExtResource("1_bqqcr")
+
+[node name="LargeMountains" type="Parallax2D" parent="."]
+scroll_scale = Vector2(0.07, 0)
+repeat_size = Vector2(1440, 0)
+repeat_times = 11
+follow_viewport = false
+
+[node name="Sprite2D" type="Sprite2D" parent="LargeMountains"]
+position = Vector2(1326, 704)
+scale = Vector2(3, 3)
+texture = ExtResource("2_2bifk")
+
+[node name="SmallMountains" type="Parallax2D" parent="."]
+scroll_scale = Vector2(0.1, 0)
+repeat_size = Vector2(720, 0)
+repeat_times = 11
+follow_viewport = false
+
+[node name="Sprite2D" type="Sprite2D" parent="SmallMountains"]
+position = Vector2(1348, 708)
+scale = Vector2(3, 3)
+texture = ExtResource("3_7hmho")
+
+[node name="Trees" type="Parallax2D" parent="."]
+scroll_scale = Vector2(0.15, 0)
+repeat_size = Vector2(1440, 0)
+repeat_times = 5
+follow_viewport = false
+
+[node name="Sprite2D" type="Sprite2D" parent="Trees"]
+position = Vector2(512, 656)
+scale = Vector2(2.084, 2)
+texture = ExtResource("4_0727b")
+
+[node name="Clouds" type="Parallax2D" parent="."]
+scroll_scale = Vector2(0.4, 0.1)
+repeat_size = Vector2(720, 0)
+repeat_times = 10
+follow_viewport = false
+
+[node name="Sprite2D2" type="Sprite2D" parent="Clouds"]
+position = Vector2(652, -215)
+scale = Vector2(2.172, 2)
+texture = ExtResource("5_ex1hg")
+
+[node name="Sprite2D" type="Sprite2D" parent="Clouds"]
+position = Vector2(357, -43)
+scale = Vector2(2.084, 2)
+texture = ExtResource("5_ex1hg")
+flip_h = true
+
+[node name="Sprite2D3" type="Sprite2D" parent="Clouds"]
+position = Vector2(390, 153)
+scale = Vector2(2.172, 2)
+texture = ExtResource("5_ex1hg")
+
+[node name="Sprite2D4" type="Sprite2D" parent="Clouds"]
+position = Vector2(324, -391)
+scale = Vector2(2.172, 2)
+texture = ExtResource("5_ex1hg")
+flip_h = true
+
+[node name="Tint" type="CanvasModulate" parent="."]
+color = Color(0.72814, 0.802023, 0.839649, 1)

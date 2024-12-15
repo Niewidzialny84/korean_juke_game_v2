@@ -1,7 +1,8 @@
-[gd_scene load_steps=7 format=3 uid="uid://cnxfydn53olav"]
+[gd_scene load_steps=8 format=3 uid="uid://cnxfydn53olav"]
 
 [ext_resource type="Texture2D" uid="uid://dhxfgwhmfjqsm" path="res://Sprites/blocks.png" id="1_41le7"]
 [ext_resource type="Script" path="res://Scripts/lever.gd" id="1_p45kh"]
+[ext_resource type="AudioStream" uid="uid://btjnopm1n8nix" path="res://Sounds/lever.ogg" id="3_sh3be"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_smr02"]
 size = Vector2(33, 31)
@@ -42,6 +43,9 @@ sprite_frames = SubResource("SpriteFrames_41to1")
 
 [node name="Timer" type="Timer" parent="."]
 one_shot = true
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("3_sh3be")
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]
 [connection signal="body_exited" from="." to="." method="_on_body_exited"]

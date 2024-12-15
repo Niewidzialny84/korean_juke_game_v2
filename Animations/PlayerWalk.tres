@@ -1,0 +1,46 @@
+[gd_resource type="SpriteFrames" load_steps=7 format=3 uid="uid://b15lm7j68dhvv"]
+
+[ext_resource type="Texture2D" uid="uid://md1tiwb6popk" path="res://Sprites/player_Juke.png" id="1_vd43q"]
+[ext_resource type="Texture2D" uid="uid://citpbysr7ge3m" path="res://Sprites/player_Juke_Ball.png" id="2_bmd5v"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ngs8w"]
+atlas = ExtResource("1_vd43q")
+region = Rect2(64, 0, 64, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ru65l"]
+atlas = ExtResource("1_vd43q")
+region = Rect2(0, 0, 64, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qhv1g"]
+atlas = ExtResource("2_bmd5v")
+region = Rect2(0, 0, 64, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_cw5xq"]
+atlas = ExtResource("2_bmd5v")
+region = Rect2(64, 0, 64, 48)
+
+[resource]
+resource_name = "player_animation"
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ngs8w")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ru65l")
+}],
+"loop": false,
+"name": &"player_walk",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_qhv1g")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_cw5xq")
+}],
+"loop": false,
+"name": &"player_walk_ball",
+"speed": 5.0
+}]
