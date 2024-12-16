@@ -1,0 +1,82 @@
+[gd_resource type="TileSet" load_steps=15 format=3 uid="uid://5y5kw5icqwyh"]
+
+[ext_resource type="Texture2D" uid="uid://cpepv12n7bh1s" path="res://Sprites/New/new-dirt-stone.png" id="1_rbctx"]
+[ext_resource type="Texture2D" uid="uid://bq2p8u8mkxdxp" path="res://Sprites/New/new-grass.png" id="2_sjp3i"]
+[ext_resource type="Texture2D" uid="uid://db4pd1v8eoqg7" path="res://Sprites/New/new-inteactable.png" id="3_dlmxf"]
+[ext_resource type="PackedScene" uid="uid://csb1sw8wxdy7r" path="res://Nodes/Lamp.tscn" id="4_cmrku"]
+[ext_resource type="PackedScene" uid="uid://es02e615u8ef" path="res://Nodes/Ant.tscn" id="5_m1dqj"]
+
+[sub_resource type="TileMapPattern" id="TileMapPattern_y8h6l"]
+tile_data = PackedInt32Array(65536, 1, 1, 131072, 1, 2, 1, 196609, 0, 65537, 65537, 1, 131073, 65537, 2, 196609, 131073, 3, 2, 65537, 0, 65538, 196609, 1, 131074, 196609, 2, 196610, 131073, 3, 65539, 262145, 2, 131075, 262145, 1)
+
+[sub_resource type="TileMapPattern" id="TileMapPattern_swetu"]
+tile_data = PackedInt32Array(65536, 1, 1, 131072, 1, 2, 196608, 1, 1, 262144, 1, 1, 327680, 1, 2, 1, 65537, 0, 65537, 65537, 1, 131073, 131073, 1610612737, 196609, 131073, 1610612737, 262145, 131073, 1610612737, 327681, 131073, 1610612737, 2, 65537, 0, 65538, 196609, 1, 131074, 131073, 1610612738, 196610, 131073, 1610612738, 262146, 131073, 1610612738, 327682, 131073, 1610612738, 65539, 262145, 1, 131075, 262145, 1, 196611, 262145, 2, 262147, 262145, 2, 327683, 262145, 1)
+
+[sub_resource type="TileMapPattern" id="TileMapPattern_h0of8"]
+tile_data = PackedInt32Array(0, 131073, 1610612737, 65536, 131073, 1610612737, 131072, 131073, 1610612737, 1, 131073, 1610612738, 65537, 131073, 1610612738, 131073, 131073, 1610612738)
+
+[sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_u8cm6"]
+polygon = PackedVector2Array(-8, -8, -8, 8, 8, 8, 8, -8)
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_qejex"]
+texture = ExtResource("1_rbctx")
+0:0/0 = 0
+0:0/0/occlusion_layer_0/polygon = SubResource("OccluderPolygon2D_u8cm6")
+0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, -8, 7, -8, 8, 8, 8, 8, -8)
+1:0/0 = 0
+1:0/0/occlusion_layer_0/polygon = SubResource("OccluderPolygon2D_u8cm6")
+1:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, -8, 7, -8, 8, 8, 8, 8, -8)
+
+[sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_hisyy"]
+polygon = PackedVector2Array(-8, -8, -8, 8, 8, 8, 8, -8)
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_xri47"]
+texture = ExtResource("2_sjp3i")
+1:0/0 = 0
+2:0/0 = 0
+3:0/0 = 0
+0:1/0 = 0
+1:1/0 = 0
+1:1/0/occlusion_layer_0/polygon = SubResource("OccluderPolygon2D_hisyy")
+1:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, -8, 8, 8, 8, 8, -8)
+2:1/0 = 0
+2:1/0/occlusion_layer_0/polygon = SubResource("OccluderPolygon2D_hisyy")
+2:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, -8, 8, 8, 8, 8, -8)
+3:1/0 = 0
+3:1/0/occlusion_layer_0/polygon = SubResource("OccluderPolygon2D_hisyy")
+3:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, -8, 8, 8, 8, 8, -8)
+4:1/0 = 0
+0:2/0 = 0
+1:2/0 = 0
+1:2/0/occlusion_layer_0/polygon = SubResource("OccluderPolygon2D_hisyy")
+1:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, -8, 8, 8, 8, 8, -8)
+2:2/0 = 0
+2:2/0/occlusion_layer_0/polygon = SubResource("OccluderPolygon2D_hisyy")
+2:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, -8, 8, 8, 8, 8, -8)
+3:2/0 = 0
+3:2/0/occlusion_layer_0/polygon = SubResource("OccluderPolygon2D_hisyy")
+3:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, -8, 8, 8, 8, 8, -8)
+4:2/0 = 0
+1:3/0 = 0
+2:3/0 = 0
+3:3/0 = 0
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_8cshs"]
+texture = ExtResource("3_dlmxf")
+5:0/0 = 0
+6:0/0 = 0
+
+[sub_resource type="TileSetScenesCollectionSource" id="TileSetScenesCollectionSource_j8l08"]
+scenes/1/scene = ExtResource("4_cmrku")
+scenes/2/scene = ExtResource("5_m1dqj")
+
+[resource]
+occlusion_layer_0/light_mask = 1
+physics_layer_0/collision_layer = 1
+sources/0 = SubResource("TileSetAtlasSource_qejex")
+sources/1 = SubResource("TileSetAtlasSource_xri47")
+sources/3 = SubResource("TileSetAtlasSource_8cshs")
+sources/4 = SubResource("TileSetScenesCollectionSource_j8l08")
+pattern_0 = SubResource("TileMapPattern_y8h6l")
+pattern_1 = SubResource("TileMapPattern_swetu")
+pattern_2 = SubResource("TileMapPattern_h0of8")

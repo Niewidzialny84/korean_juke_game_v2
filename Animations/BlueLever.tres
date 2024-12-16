@@ -1,23 +1,23 @@
 [gd_resource type="SpriteFrames" load_steps=4 format=3 uid="uid://rgql1hrmmb2s"]
 
-[ext_resource type="Texture2D" uid="uid://dhxfgwhmfjqsm" path="res://Sprites/blocks.png" id="1_qjq88"]
+[ext_resource type="Texture2D" uid="uid://db4pd1v8eoqg7" path="res://Sprites/New/new-inteactable.png" id="1_6qj7h"]
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_pbuh5"]
-atlas = ExtResource("1_qjq88")
-region = Rect2(0, 64, 32, 32)
+[sub_resource type="AtlasTexture" id="AtlasTexture_4dtdt"]
+atlas = ExtResource("1_6qj7h")
+region = Rect2(32, 0, 16, 16)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_be3q6"]
-atlas = ExtResource("1_qjq88")
-region = Rect2(32, 64, 32, 32)
+[sub_resource type="AtlasTexture" id="AtlasTexture_q0sva"]
+atlas = ExtResource("1_6qj7h")
+region = Rect2(48, 0, 16, 16)
 
 [resource]
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_pbuh5")
+"texture": SubResource("AtlasTexture_4dtdt")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_be3q6")
+"texture": SubResource("AtlasTexture_q0sva")
 }],
 "loop": false,
 "name": &"default",

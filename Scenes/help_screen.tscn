@@ -1,6 +1,7 @@
-[gd_scene load_steps=3 format=3 uid="uid://cx1ae5f80lwo3"]
+[gd_scene load_steps=4 format=3 uid="uid://cx1ae5f80lwo3"]
 
 [ext_resource type="Script" path="res://Scripts/help_screen.gd" id="1_4tpya"]
+[ext_resource type="LabelSettings" uid="uid://cvev8j862jnuk" path="res://label_setting.tres" id="2_hi28v"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_p2eb5"]
 font_size = 32
@@ -16,8 +17,8 @@ script = ExtResource("1_4tpya")
 
 [node name="ColorRect" type="ColorRect" parent="."]
 layout_mode = 0
-offset_right = 1024.0
-offset_bottom = 576.0
+offset_right = 480.0
+offset_bottom = 270.0
 color = Color(0.118581, 0.118581, 0.118581, 1)
 
 [node name="Back" type="Button" parent="."]
@@ -30,53 +31,60 @@ text = "Back"
 
 [node name="Title" type="Label" parent="."]
 layout_mode = 0
-offset_left = 97.0
+offset_left = 116.0
 offset_top = 18.0
-offset_right = 168.0
+offset_right = 384.0
 offset_bottom = 63.0
 text = "Help/instructions"
 label_settings = SubResource("LabelSettings_p2eb5")
 
 [node name="GridContainer" type="GridContainer" parent="."]
 layout_mode = 0
-offset_left = 63.0
-offset_top = 127.0
-offset_right = 382.0
-offset_bottom = 177.0
+offset_left = 18.0
+offset_top = 90.0
+offset_right = 337.0
+offset_bottom = 140.0
 
 [node name="Label" type="Label" parent="GridContainer"]
 layout_mode = 2
 text = "Main objective is to move a ball to a tent"
+label_settings = ExtResource("2_hi28v")
 
 [node name="Label2" type="Label" parent="GridContainer"]
 layout_mode = 2
 text = "Player cannot jump while carying the ball"
+label_settings = ExtResource("2_hi28v")
 
 [node name="GridContainer2" type="GridContainer" parent="."]
 layout_mode = 0
-offset_left = 575.0
-offset_top = 127.0
-offset_right = 846.0
-offset_bottom = 231.0
+offset_left = 276.0
+offset_top = 90.0
+offset_right = 547.0
+offset_bottom = 194.0
 
 [node name="Label4" type="Label" parent="GridContainer2"]
 layout_mode = 2
 text = "Move right: \"Arrow right\" or \"D\""
+label_settings = ExtResource("2_hi28v")
 
 [node name="Label5" type="Label" parent="GridContainer2"]
 layout_mode = 2
 text = "Move left: \"Arrow left\" or \"A\""
+label_settings = ExtResource("2_hi28v")
 
 [node name="Label6" type="Label" parent="GridContainer2"]
 layout_mode = 2
 text = "Jump: \"Space\", \"Arrow Up\" or \"W\""
+label_settings = ExtResource("2_hi28v")
 
 [node name="Label3" type="Label" parent="GridContainer2"]
 layout_mode = 2
 text = "To interact with objects use \"E\" key"
+label_settings = ExtResource("2_hi28v")
 
 [node name="Label7" type="Label" parent="GridContainer2"]
 layout_mode = 2
 text = "To zoom out use \"Q\" key"
+label_settings = ExtResource("2_hi28v")
 
 [connection signal="pressed" from="Back" to="." method="_on_back_pressed"]

@@ -24,7 +24,7 @@ func handle_input() -> void:
 		
 	if Input.is_action_pressed("zoom"):
 		if $Camera2D.zoom >= camera_zoom_treshold:
-			$Camera2D.zoom -= Vector2(0.03, 0.03)
+			$Camera2D.zoom -= Vector2(0.07, 0.07)
 		
 		#To ignore all further movement
 		return

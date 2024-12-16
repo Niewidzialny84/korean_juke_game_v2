@@ -13,8 +13,8 @@ layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_right = -1024.0
-offset_bottom = -576.0
+offset_right = -480.0
+offset_bottom = -270.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_blw7p")
@@ -22,19 +22,18 @@ script = ExtResource("1_blw7p")
 [node name="ColorRect" type="ColorRect" parent="."]
 material = SubResource("ShaderMaterial_1yqv4")
 layout_mode = 0
-offset_left = -195.0
-offset_top = -171.0
-offset_right = 1263.0
-offset_bottom = 696.0
+offset_right = 522.0
+offset_bottom = 272.0
+scale = Vector2(0.920001, 1)
 
 [node name="MenuButtons" type="VBoxContainer" parent="."]
 layout_mode = 1
 anchors_preset = -1
 anchor_right = 0.5
-offset_left = 317.0
-offset_top = 201.0
-offset_right = 768.0
-offset_bottom = 337.0
+offset_left = 112.0
+offset_top = 64.0
+offset_right = 368.0
+offset_bottom = 200.0
 grow_horizontal = 2
 
 [node name="Resume" type="Button" parent="MenuButtons"]

@@ -11,70 +11,68 @@
 [node name="Sky" type="Parallax2D" parent="."]
 scroll_scale = Vector2(0.25, 0.25)
 repeat_size = Vector2(720, 480)
-repeat_times = 10
+repeat_times = 3
 
 [node name="Sprite2D" type="Sprite2D" parent="Sky"]
-position = Vector2(700, 0)
+position = Vector2(1100, 724)
 scale = Vector2(1.042, 1)
 texture = ExtResource("1_bqqcr")
 
 [node name="LargeMountains" type="Parallax2D" parent="."]
 scroll_scale = Vector2(0.07, 0)
+scroll_offset = Vector2(121, 471)
 repeat_size = Vector2(1440, 0)
-repeat_times = 11
 follow_viewport = false
 
 [node name="Sprite2D" type="Sprite2D" parent="LargeMountains"]
-position = Vector2(1326, 704)
+position = Vector2(2044, 1028)
 scale = Vector2(3, 3)
 texture = ExtResource("2_2bifk")
 
 [node name="SmallMountains" type="Parallax2D" parent="."]
 scroll_scale = Vector2(0.1, 0)
 repeat_size = Vector2(720, 0)
-repeat_times = 11
 follow_viewport = false
 
 [node name="Sprite2D" type="Sprite2D" parent="SmallMountains"]
-position = Vector2(1348, 708)
+position = Vector2(1088, 1413)
 scale = Vector2(3, 3)
 texture = ExtResource("3_7hmho")
 
 [node name="Trees" type="Parallax2D" parent="."]
 scroll_scale = Vector2(0.15, 0)
 repeat_size = Vector2(1440, 0)
-repeat_times = 5
 follow_viewport = false
 
 [node name="Sprite2D" type="Sprite2D" parent="Trees"]
-position = Vector2(512, 656)
+position = Vector2(725, 1478)
 scale = Vector2(2.084, 2)
 texture = ExtResource("4_0727b")
 
 [node name="Clouds" type="Parallax2D" parent="."]
-scroll_scale = Vector2(0.4, 0.1)
+scroll_scale = Vector2(0.4, 0)
 repeat_size = Vector2(720, 0)
-repeat_times = 10
+autoscroll = Vector2(7, 0)
 follow_viewport = false
 
 [node name="Sprite2D2" type="Sprite2D" parent="Clouds"]
-position = Vector2(652, -215)
+position = Vector2(826, 1114)
 scale = Vector2(2.172, 2)
 texture = ExtResource("5_ex1hg")
 
 [node name="Sprite2D" type="Sprite2D" parent="Clouds"]
-position = Vector2(357, -43)
+position = Vector2(725, 484)
 scale = Vector2(2.084, 2)
 texture = ExtResource("5_ex1hg")
 flip_h = true
 
 [node name="Sprite2D3" type="Sprite2D" parent="Clouds"]
-position = Vector2(390, 153)
+position = Vector2(1326, 1331)
 scale = Vector2(2.172, 2)
 texture = ExtResource("5_ex1hg")
 
 [node name="Sprite2D4" type="Sprite2D" parent="Clouds"]
-position = Vector2(324, -391)
+position = Vector2(1475, 757)
 scale = Vector2(2.172, 2)
 texture = ExtResource("5_ex1hg")
 flip_h = true

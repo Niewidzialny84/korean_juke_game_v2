@@ -11,17 +11,18 @@ grow_horizontal = 2
 grow_vertical = 2
 
 [node name="ColorRect" type="ColorRect" parent="."]
-layout_mode = 0
-offset_right = 1024.0
-offset_bottom = 576.0
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 1.0
+anchor_bottom = 1.0
 color = Color(0.118581, 0.118581, 0.118581, 1)
 
 [node name="RichTextLabel" type="RichTextLabel" parent="."]
 layout_mode = 0
-offset_left = 224.0
-offset_top = 192.0
-offset_right = 768.0
-offset_bottom = 422.0
+offset_left = 30.0
+offset_top = 24.0
+offset_right = 446.0
+offset_bottom = 254.0
 text = "Credits
 
 

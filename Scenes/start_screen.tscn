@@ -13,17 +13,17 @@ script = ExtResource("1_7rjx6")
 
 [node name="Background" type="TextureRect" parent="."]
 texture_filter = 1
-offset_top = -67.0
-offset_right = 1241.0
-offset_bottom = 630.0
+offset_top = -29.0
+offset_right = 493.0
+offset_bottom = 291.0
 texture = ExtResource("2_jpqij")
 stretch_mode = 4
 
 [node name="MenuButtons" type="VBoxContainer" parent="."]
-offset_left = 337.0
-offset_top = 275.0
-offset_right = 687.0
-offset_bottom = 385.0
+offset_left = 176.0
+offset_top = 102.0
+offset_right = 313.0
+offset_bottom = 211.0
 
 [node name="Start" type="Button" parent="MenuButtons"]
 layout_mode = 2
@@ -39,8 +39,8 @@ layout_mode = 2
 text = "Exit"
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-position = Vector2(515, 187)
-scale = Vector2(5, 5)
+position = Vector2(240, 70)
+scale = Vector2(2, 2)
 texture = SubResource("AtlasTexture_3isfa")
 
 [connection signal="pressed" from="MenuButtons/Start" to="." method="_change_to_game_scene"]
