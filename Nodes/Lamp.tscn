@@ -1,10 +1,10 @@
 [gd_scene load_steps=4 format=3 uid="uid://csb1sw8wxdy7r"]
 
 [ext_resource type="Texture2D" uid="uid://bkbqwfs4rc1wd" path="res://Sprites/2d_lights_and_shadows_neutral_point_light.webp" id="1_3njd6"]
-[ext_resource type="Texture2D" uid="uid://db4pd1v8eoqg7" path="res://Sprites/New/new-inteactable.png" id="2_rw3d6"]
+[ext_resource type="Texture2D" uid="uid://bxte2loqe2xp1" path="res://Sprites/New/new-interactable.png" id="2_teogi"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_mvqty"]
-atlas = ExtResource("2_rw3d6")
+atlas = ExtResource("2_teogi")
 region = Rect2(112, 0, 16, 16)
 
 [node name="Lamp" type="Node2D"]

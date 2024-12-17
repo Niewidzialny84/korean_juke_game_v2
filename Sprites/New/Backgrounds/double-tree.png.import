@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://db4pd1v8eoqg7"
-path="res://.godot/imported/new-inteactable.png-2654c23b9fc12dbe04c94293bea69076.ctex"
+uid="uid://87iqmumhusst"
+path="res://.godot/imported/double-tree.png-a7d85a516bc8afed78d4a588772c3918.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Sprites/New/new-inteactable.png"
-dest_files=["res://.godot/imported/new-inteactable.png-2654c23b9fc12dbe04c94293bea69076.ctex"]
+source_file="res://Sprites/New/Backgrounds/double-tree.png"
+dest_files=["res://.godot/imported/double-tree.png-a7d85a516bc8afed78d4a588772c3918.ctex"]
 
 [params]
 

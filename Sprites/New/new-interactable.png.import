@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cptf6opix7g0u"
-path="res://.godot/imported/new-dirt-stone.png-d6650bacd5f528de488f1544a665ab74.ctex"
+uid="uid://bxte2loqe2xp1"
+path="res://.godot/imported/new-interactable.png-5c7758f10107f96226d29bebf2a69c0e.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Sprites/New/new-dirt-stone.png"
-dest_files=["res://.godot/imported/new-dirt-stone.png-d6650bacd5f528de488f1544a665ab74.ctex"]
+source_file="res://Sprites/New/new-interactable.png"
+dest_files=["res://.godot/imported/new-interactable.png-5c7758f10107f96226d29bebf2a69c0e.ctex"]
 
 [params]
 

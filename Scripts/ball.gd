@@ -39,7 +39,7 @@ func pick_up_ball() -> void:
 
 func drop_ball() -> void:
 	visible = true
-	position = control_player.position - Vector2(0, -8)
+	position = control_player.position - Vector2(0, -0)
 	dropped_ball.emit()
 
 func _on_body_entered(body: Node2D) -> void:

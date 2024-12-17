@@ -1,23 +1,23 @@
 [gd_resource type="SpriteFrames" load_steps=4 format=3 uid="uid://rgql1hrmmb2s"]
 
-[ext_resource type="Texture2D" uid="uid://db4pd1v8eoqg7" path="res://Sprites/New/new-inteactable.png" id="1_6qj7h"]
+[ext_resource type="Texture2D" uid="uid://bxte2loqe2xp1" path="res://Sprites/New/new-interactable.png" id="1_bra6e"]
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_4dtdt"]
-atlas = ExtResource("1_6qj7h")
+[sub_resource type="AtlasTexture" id="AtlasTexture_hlehw"]
+atlas = ExtResource("1_bra6e")
 region = Rect2(32, 0, 16, 16)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_q0sva"]
-atlas = ExtResource("1_6qj7h")
+[sub_resource type="AtlasTexture" id="AtlasTexture_l42pp"]
+atlas = ExtResource("1_bra6e")
 region = Rect2(48, 0, 16, 16)
 
 [resource]
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_4dtdt")
+"texture": SubResource("AtlasTexture_hlehw")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_q0sva")
+"texture": SubResource("AtlasTexture_l42pp")
 }],
 "loop": false,
 "name": &"default",

@@ -1,15 +1,14 @@
 [gd_scene load_steps=6 format=3 uid="uid://cnwfna3c7frxc"]
 
 [ext_resource type="Script" path="res://Scripts/ball.gd" id="1_sowtj"]
-[ext_resource type="Texture2D" uid="uid://dhxfgwhmfjqsm" path="res://Sprites/blocks.png" id="2_y8xl8"]
+[ext_resource type="Texture2D" uid="uid://bxte2loqe2xp1" path="res://Sprites/New/new-interactable.png" id="2_5kqr1"]
 [ext_resource type="AudioStream" uid="uid://btjnopm1n8nix" path="res://Sounds/lever.ogg" id="3_o0knk"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_ngo51"]
-radius = 16.0312
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_v7n6h"]
-atlas = ExtResource("2_y8xl8")
-region = Rect2(32, 128, 32, 32)
+atlas = ExtResource("2_5kqr1")
+region = Rect2(128, 0, 16, 16)
 
 [node name="Ball" type="Area2D"]
 script = ExtResource("1_sowtj")

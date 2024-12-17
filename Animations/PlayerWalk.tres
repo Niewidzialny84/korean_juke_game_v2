@@ -1,33 +1,32 @@
-[gd_resource type="SpriteFrames" load_steps=7 format=3 uid="uid://b15lm7j68dhvv"]
+[gd_resource type="SpriteFrames" load_steps=6 format=3 uid="uid://b15lm7j68dhvv"]
 
-[ext_resource type="Texture2D" uid="uid://md1tiwb6popk" path="res://Sprites/player_Juke.png" id="1_vd43q"]
-[ext_resource type="Texture2D" uid="uid://citpbysr7ge3m" path="res://Sprites/player_Juke_Ball.png" id="2_bmd5v"]
+[ext_resource type="Texture2D" uid="uid://bxte2loqe2xp1" path="res://Sprites/New/new-interactable.png" id="1_yqmk0"]
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_ngs8w"]
-atlas = ExtResource("1_vd43q")
-region = Rect2(64, 0, 64, 48)
+[sub_resource type="AtlasTexture" id="AtlasTexture_8u4lx"]
+atlas = ExtResource("1_yqmk0")
+region = Rect2(176, 0, 16, 16)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_ru65l"]
-atlas = ExtResource("1_vd43q")
-region = Rect2(0, 0, 64, 48)
+[sub_resource type="AtlasTexture" id="AtlasTexture_ppofv"]
+atlas = ExtResource("1_yqmk0")
+region = Rect2(192, 0, 16, 16)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_qhv1g"]
-atlas = ExtResource("2_bmd5v")
-region = Rect2(0, 0, 64, 48)
+[sub_resource type="AtlasTexture" id="AtlasTexture_yg87x"]
+atlas = ExtResource("1_yqmk0")
+region = Rect2(208, 0, 16, 16)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_cw5xq"]
-atlas = ExtResource("2_bmd5v")
-region = Rect2(64, 0, 64, 48)
+[sub_resource type="AtlasTexture" id="AtlasTexture_xy7k6"]
+atlas = ExtResource("1_yqmk0")
+region = Rect2(224, 0, 16, 16)
 
 [resource]
 resource_name = "player_animation"
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_ngs8w")
+"texture": SubResource("AtlasTexture_8u4lx")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_ru65l")
+"texture": SubResource("AtlasTexture_ppofv")
 }],
 "loop": false,
 "name": &"player_walk",
@@ -35,10 +34,10 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_qhv1g")
+"texture": SubResource("AtlasTexture_yg87x")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_cw5xq")
+"texture": SubResource("AtlasTexture_xy7k6")
 }],
 "loop": false,
 "name": &"player_walk_ball",

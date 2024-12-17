@@ -4,8 +4,8 @@ class_name Player
 
 signal died 
 
-const SPEED = 300
-const JUMP_POWER = -375
+const SPEED = 75
+const JUMP_POWER = -275
 var starting_position = Vector2.ZERO
 
 @export var ball : Ball
@@ -49,7 +49,7 @@ func handle_input() -> void:
 		$AnimatedSprite2D.stop()
 		
 	if !is_on_floor():
-		velocity.x /= 1.5
+		velocity.x /= 1.3
 	
 func _physics_process(_delta: float) -> void:
 	if $DeathAnimation.is_playing():

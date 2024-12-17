@@ -1,10 +1,44 @@
-[gd_scene load_steps=6 format=3 uid="uid://dmuprg6squojm"]
+[gd_scene load_steps=16 format=3 uid="uid://dmuprg6squojm"]
 
 [ext_resource type="Texture2D" uid="uid://lbxmgnvnmwnd" path="res://Sprites/background-sky.png" id="1_bqqcr"]
 [ext_resource type="Texture2D" uid="uid://dydqxudjnpbvr" path="res://Sprites/background-mountain-large.png" id="2_2bifk"]
-[ext_resource type="Texture2D" uid="uid://dbmxhqxct3tn1" path="res://Sprites/background-mountain-small.png" id="3_7hmho"]
-[ext_resource type="Texture2D" uid="uid://qrjpo7x4sim8" path="res://Sprites/background-tree.png" id="4_0727b"]
+[ext_resource type="Texture2D" uid="uid://87iqmumhusst" path="res://Sprites/New/Backgrounds/double-tree.png" id="3_11hvi"]
+[ext_resource type="Shader" path="res://Shaders/desaturate.gdshader" id="4_hxp7r"]
+[ext_resource type="Texture2D" uid="uid://e0k27ocqn13s" path="res://Sprites/New/Backgrounds/bushes.png" id="4_n3ctt"]
 [ext_resource type="Texture2D" uid="uid://b7riy2ndi481h" path="res://Sprites/background-cloud.png" id="5_ex1hg"]
+
+[sub_resource type="Gradient" id="Gradient_qf7q0"]
+offsets = PackedFloat32Array(0.204918, 1)
+colors = PackedColorArray(0.16542, 0.18, 0.0342, 1, 0.489622, 0.489622, 0.489622, 1)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_bbjsg"]
+gradient = SubResource("Gradient_qf7q0")
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_rubba"]
+shader = ExtResource("4_hxp7r")
+shader_parameter/pallete = SubResource("GradientTexture1D_bbjsg")
+
+[sub_resource type="Gradient" id="Gradient_gxtmw"]
+offsets = PackedFloat32Array(0, 0.967213, 1)
+colors = PackedColorArray(0.1656, 0.18, 0.036, 1, 0.430155, 0.433342, 0.401473, 1, 0.505344, 0.505344, 0.505344, 1)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_bsqe6"]
+gradient = SubResource("Gradient_gxtmw")
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_kis1o"]
+shader = ExtResource("4_hxp7r")
+shader_parameter/pallete = SubResource("GradientTexture1D_bsqe6")
+
+[sub_resource type="Gradient" id="Gradient_5udfk"]
+offsets = PackedFloat32Array(0, 0.655738, 1)
+colors = PackedColorArray(0.16542, 0.18, 0.0342, 1, 0.182128, 0.283812, 0.211488, 1, 1, 1, 1, 1)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_bdcty"]
+gradient = SubResource("Gradient_5udfk")
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_yjwry"]
+shader = ExtResource("4_hxp7r")
+shader_parameter/pallete = SubResource("GradientTexture1D_bdcty")
 
 [node name="Background" type="Node2D"]
 
@@ -19,6 +53,7 @@ scale = Vector2(1.042, 1)
 texture = ExtResource("1_bqqcr")
 
 [node name="LargeMountains" type="Parallax2D" parent="."]
+visible = false
 scroll_scale = Vector2(0.07, 0)
 scroll_offset = Vector2(121, 471)
 repeat_size = Vector2(1440, 0)
@@ -29,25 +64,32 @@ position = Vector2(2044, 1028)
 scale = Vector2(3, 3)
 texture = ExtResource("2_2bifk")
 
-[node name="SmallMountains" type="Parallax2D" parent="."]
-scroll_scale = Vector2(0.1, 0)
-repeat_size = Vector2(720, 0)
-follow_viewport = false
-
-[node name="Sprite2D" type="Sprite2D" parent="SmallMountains"]
-position = Vector2(1088, 1413)
-scale = Vector2(3, 3)
-texture = ExtResource("3_7hmho")
-
 [node name="Trees" type="Parallax2D" parent="."]
-scroll_scale = Vector2(0.15, 0)
-repeat_size = Vector2(1440, 0)
+scroll_scale = Vector2(0.1, 0)
+repeat_size = Vector2(480, 0)
+repeat_times = 7
 follow_viewport = false
+
+[node name="Sprite2D2" type="Sprite2D" parent="Trees"]
+material = SubResource("ShaderMaterial_rubba")
+position = Vector2(448, 1689)
+texture = ExtResource("3_11hvi")
 
 [node name="Sprite2D" type="Sprite2D" parent="Trees"]
-position = Vector2(725, 1478)
-scale = Vector2(2.084, 2)
-texture = ExtResource("4_0727b")
+material = SubResource("ShaderMaterial_kis1o")
+position = Vector2(294, 1683)
+texture = ExtResource("3_11hvi")
+
+[node name="Bushes" type="Parallax2D" parent="."]
+scroll_scale = Vector2(0.15, 0)
+repeat_size = Vector2(480, 0)
+repeat_times = 8
+follow_viewport = false
+
+[node name="Sprite2D" type="Sprite2D" parent="Bushes"]
+material = SubResource("ShaderMaterial_yjwry")
+position = Vector2(285, 1684)
+texture = ExtResource("4_n3ctt")
 
 [node name="Clouds" type="Parallax2D" parent="."]
 scroll_scale = Vector2(0.4, 0)
@@ -78,4 +120,4 @@ texture = ExtResource("5_ex1hg")
 flip_h = true
 
 [node name="Tint" type="CanvasModulate" parent="."]
-color = Color(0.72814, 0.802023, 0.839649, 1)
+color = Color(0.853192, 0.894506, 0.915726, 1)

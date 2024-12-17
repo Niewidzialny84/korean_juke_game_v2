@@ -1,27 +1,27 @@
 [gd_scene load_steps=7 format=3 uid="uid://es02e615u8ef"]
 
 [ext_resource type="Script" path="res://Scripts/ant.gd" id="1_jd44i"]
-[ext_resource type="Texture2D" uid="uid://db4pd1v8eoqg7" path="res://Sprites/New/new-inteactable.png" id="2_vsryv"]
+[ext_resource type="Texture2D" uid="uid://bxte2loqe2xp1" path="res://Sprites/New/new-interactable.png" id="2_e86dd"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_7w16q"]
 size = Vector2(14, 8)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_1yjbk"]
-atlas = ExtResource("2_vsryv")
+[sub_resource type="AtlasTexture" id="AtlasTexture_f5ffe"]
+atlas = ExtResource("2_e86dd")
 region = Rect2(144, 0, 16, 16)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_evgy1"]
-atlas = ExtResource("2_vsryv")
+[sub_resource type="AtlasTexture" id="AtlasTexture_mwmnu"]
+atlas = ExtResource("2_e86dd")
 region = Rect2(160, 0, 16, 16)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_hovqs"]
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_1yjbk")
+"texture": SubResource("AtlasTexture_f5ffe")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_evgy1")
+"texture": SubResource("AtlasTexture_mwmnu")
 }],
 "loop": true,
 "name": &"default",
